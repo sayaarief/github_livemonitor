@@ -21,7 +21,7 @@ function check_status_with_heroku($http_code,$host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	
-	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$host;
+	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url="$http_code.$host;
 	
 	$ch = curl_init($heroku_url);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
@@ -185,14 +185,14 @@ function check_status($host)
 				); */
 
 $array_site = array(
-					array("pc"=>"http://", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop", "snapshot"=>0),					
-					array("pc"=>"http://", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0),					
+					array("pc"=>"www.", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building", "snapshot"=>0),
+					array("pc"=>"", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card", "snapshot"=>0),
+					array("pc"=>"", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop", "snapshot"=>0),					
+					array("pc"=>"", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android", "snapshot"=>0),
+					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple", "snapshot"=>0),
+					array("pc"=>"", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile", "snapshot"=>0),
+					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child", "snapshot"=>0),
+					array("pc"=>"www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0),					
 				);
 				
 $array_snapshots = array();

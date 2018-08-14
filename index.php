@@ -263,10 +263,7 @@ $array_snapshots = array();
 						
 					<br clear='all'/><br clear='all'/>
 					<span class="heading"><?php echo $v['url']; ?></span>
-					<span class="value"><span><?php echo $v['title']; ?></span></span>
-					<iframe class="frame" scrolling="no" style="border-radius:5px" width="100%" src="<?php echo $v['pc'].$v['url']; ?>">
-						<p>Your browser does not support iframes.</p>
-					</iframe>
+					<span class="value"><span><?php echo $v['title']; ?></span></span>					
 				</div>
 			</div>
 		<?php 

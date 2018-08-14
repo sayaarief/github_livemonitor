@@ -24,8 +24,8 @@ function check_status_with_heroku($http_code,$host)
 	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
 	
 	$ch = curl_init($heroku_url);  
-    curl_setopt($ch, CURLOPT_TIMEOUT, 15);  
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 15);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data = curl_exec($ch);	

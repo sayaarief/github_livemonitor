@@ -21,7 +21,7 @@ function check_status_with_heroku($http_code,$host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	
-	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=www.".$host;
+	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$host;
 	
 	$ch = curl_init($heroku_url);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  

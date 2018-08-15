@@ -21,8 +21,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	
-	//$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
-	$heroku_url = "https://livemonitor-api.herokuapp.com/check_url.php?host=".$host;
+	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
+	//$heroku_url = "https://livemonitor-api.herokuapp.com/check_url.php?host=".$host;
 	
 	$ch = curl_init($heroku_url);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
@@ -35,7 +35,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 		echo '<pre>'.('Couldn\'t send request: ' . curl_error($ch)).'</pre>';
 	}
 	$data = json_decode($data, true);
-	$httpcode = $data['http_code'];
+	$httpcode = $data['status'];
 	curl_close($ch);
 	//echo '<pre>'.$httpmsg.'</pre>';	
     if($httpcode>=200 && $httpcode<300)
@@ -62,7 +62,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			//$result = curl_exec($ch);		
+			$result = curl_exec($ch);		
 			curl_close($ch);
 		}
         return $offline_style;

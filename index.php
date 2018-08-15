@@ -29,16 +29,22 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    $data = curl_exec($ch);	
-	$data = json_decode($data, true);	
+    $data = curl_exec($ch);
+	
+	if (curl_errno($ch))
+	{
+		echo('Couldn\'t send request: ' . curl_error($ch));
+	}
+	curl_close($ch);	
+	//$data = json_decode($data, true);	
+	print_r($data);die;
 	$httpcode = $data['status'];	
 	$httpmsg = $data['message'];
 	if($httpmsg == "")
 	{
 		$httpmsg = 'ok';
 	}
-	//echo '<pre>'.$httpmsg.'</pre>';
-    curl_close($ch);  
+	//echo '<pre>'.$httpmsg.'</pre>';    
     if($httpcode>=200 && $httpcode<300)
 	{  
         return $online_style;

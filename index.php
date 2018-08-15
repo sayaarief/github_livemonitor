@@ -240,7 +240,7 @@ $array_snapshots = array();
     transform-origin: 0 0;
 }
 </style>
-<main style="padding-left:10px">
+<main>
 <div class="row" style="color:black !important;">
 	<?php 
 		foreach($array_site as $k=> $v)
@@ -276,7 +276,7 @@ $array_snapshots = array();
 		<?php 
 		}
 	?>
-	<i id="timestamp" style="right: 0;bottom: 0;position: relative;">		
+	<i id="timestamp" style="right: 0;bottom: 0;position: fixed;">		
 	</i>
 </div>
 </main>

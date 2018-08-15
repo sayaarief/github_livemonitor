@@ -197,6 +197,9 @@ $array_site = array(
 					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0, "notify"=>0),
 					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'intl.i3teamworks.com/login.php', "title" => 'INTL i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/login.php', "title" => 'CN i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
 				);
 				
 $array_snapshots = array();
@@ -266,7 +269,7 @@ $array_snapshots = array();
 						?>
 						
 					<br clear='all'/><br clear='all'/>
-					<span class="heading"><?php echo $v['url']; ?></span>
+					<span class="heading" style="font-size:12px !important;"><?php echo $v['url']; ?></span>
 					<span class="value"><span><?php echo $v['title']; ?></span></span>					
 				</div>
 			</div>

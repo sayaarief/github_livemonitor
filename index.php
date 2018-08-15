@@ -37,7 +37,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	//$data = json_decode($data, true);
 	$httpcode = $data['http_code'];
 	curl_close($ch);
-	//echo '<pre>'.$httpmsg.'</pre>';    
+	//echo '<pre>'.$httpmsg.'</pre>';
+	echo '<pre>'.$httpcode.'</pre>';
     if($httpcode>=200 && $httpcode<300)
 	{  
         return $online_style;
@@ -62,7 +63,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			$result = curl_exec($ch);		
+			//$result = curl_exec($ch);		
 			curl_close($ch);
 		}
         return $offline_style;

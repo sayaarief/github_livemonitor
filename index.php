@@ -283,8 +283,9 @@ $array_snapshots = array();
 <script type="text/javascript">
 	$(document).ready(function()
 	{
-		var timestamp = new Date().getTime();
-		document.getElementById('timestamp').innerHTML = "Last checked on "+timestamp;
+		var dt = new Date();
+		var utcDate = dt.toUTCString();
+		document.getElementById('timestamp').innerHTML = "Last checked on "+utcDate;
 		$('.heading').on('click',function()
 		{
 			var url = 'http://'+$(this).text();			

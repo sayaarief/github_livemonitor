@@ -218,6 +218,7 @@ $array_snapshots = array();
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="moments.js"></script>
 <link rel="stylesheet" type="text/css" href="index.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <meta http-equiv="refresh" content="1800;url=index.php">
@@ -283,8 +284,12 @@ $array_snapshots = array();
 <script type="text/javascript">
 	$(document).ready(function()
 	{
+		//var dt = new Date();
+		//var utcDate = dt.toUTCString();
+		
 		var dt = new Date();
-		var utcDate = dt.toUTCString();
+		var utcDate = moment.tz(date, "Asia/Kuala_Lumpur").format('YYYY-MM-DD HH:mm:ss');
+		
 		document.getElementById('timestamp').innerHTML = "Last checked on "+utcDate;
 		$('.heading').on('click',function()
 		{

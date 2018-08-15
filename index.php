@@ -24,19 +24,19 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	//$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
 	$heroku_url = "https://livemonitor-api.herokuapp.com/check_url.php?host=".$host;
 	
-	$ch = curl_init($heroku_url);  
-    curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    $data = curl_exec($ch);
-	if (curl_errno($ch))
+	$ch1 = curl_init($heroku_url);  
+    curl_setopt($ch1, CURLOPT_TIMEOUT, 60);  
+    curl_setopt($ch1, CURLOPT_CONNECTTIMEOUT, 60);
+    curl_setopt($ch1, CURLOPT_RETURNTRANSFER, true); 
+	curl_setopt($ch1, CURLOPT_FOLLOWLOCATION, true);
+    $data = curl_exec($ch1);
+	if (curl_errno($ch1))
 	{
-		echo '<pre>'.('Couldn\'t send request: ' . curl_error($ch)).'</pre>';
+		echo '<pre>'.('Couldn\'t send request: ' . curl_error($ch1)).'</pre>';
 	}
 	//$data = json_decode($data, true);
 	$httpcode = $data['http_code'];
-	curl_close($ch);
+	curl_close($ch1);
 	//echo '<pre>'.$httpmsg.'</pre>';
 	echo '<pre>'.$httpcode.'</pre>';
     if($httpcode>=200 && $httpcode<300)

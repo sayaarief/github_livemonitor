@@ -21,8 +21,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	
-	//$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
-	$heroku_url = "http://madarief.lamanrasmi.com/livemonitor_api/check_url.php?http_code=".$http_code."&host=".$host;
+	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
+	//$heroku_url = "http://madarief.lamanrasmi.com/livemonitor_api/check_url.php?http_code=".$http_code."&host=".$host;
 	
 	$ch = curl_init($heroku_url);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
@@ -30,10 +30,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data = curl_exec($ch);	
-	$data = json_decode($data, true);
-	print_r($data);
-	die;
-	$httpcode = $data['http_code'];	
+	$data = json_decode($data, true);	
+	$httpcode = $data['status'];	
 	$httpmsg = $data['message'];
 	if($httpmsg == "")
 	{

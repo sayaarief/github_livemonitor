@@ -37,8 +37,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$data = json_decode($data, true);
 	$httpcode = $data['http_code'];
 	curl_close($ch);
-	//echo '<pre>'.$httpmsg.'</pre>';
-	echo '<pre>'.$httpcode.'</pre>';die;
+	//echo '<pre>'.$httpmsg.'</pre>';	
     if($httpcode>=200 && $httpcode<300)
 	{  
         return $online_style;

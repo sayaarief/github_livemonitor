@@ -7,7 +7,7 @@ set_time_limit(0);
 require 'vendor/autoload.php'; 
 use GuzzleHttp\Client;
 
-function check_status_with_heroku($http_code,$host)
+function check_status_with_heroku($http_code,$host, $notify_flag)
 {
 	$disable_web_page_preview = null;
 	$reply_to_message_id = null;
@@ -44,24 +44,27 @@ function check_status_with_heroku($http_code,$host)
     }
 	else
 	{
-		$host_msg = "<b>".$host."</b>". " went offline";
-		$fields=array(
-						'chat_id' => $chat_id,
-						'parse_mode'=>'html',
-						'text' => "Oops, ".$host_msg,
-						'disable_web_page_preview' => urlencode($disable_web_page_preview),
-						'reply_to_message_id' => urlencode($reply_to_message_id),
-						'reply_markup' => urlencode($reply_markup)
-					);
-		//$url = "https://api.telegram.org/bot676415365:AAFZWGH-kaUBpPR9xspIYz8n5MUA5AQ-EYs/sendMessage?chat_id=449412519&text=test123456";
-		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_POST, count($fields));
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		$result = curl_exec($ch);		
-		curl_close($ch);
+		if($notify_flag)
+		{
+			$host_msg = "<b>".$host."</b>". " went offline";
+			$fields=array(
+							'chat_id' => $chat_id,
+							'parse_mode'=>'html',
+							'text' => "Oops, ".$host_msg,
+							'disable_web_page_preview' => urlencode($disable_web_page_preview),
+							'reply_to_message_id' => urlencode($reply_to_message_id),
+							'reply_markup' => urlencode($reply_markup)
+						);
+			//$url = "https://api.telegram.org/bot676415365:AAFZWGH-kaUBpPR9xspIYz8n5MUA5AQ-EYs/sendMessage?chat_id=449412519&text=test123456";
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_POST, count($fields));
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			$result = curl_exec($ch);		
+			curl_close($ch);
+		}
         return $offline_style;
     }
 }
@@ -185,14 +188,15 @@ function check_status($host)
 				); */
 
 $array_site = array(
-					array("pc"=>"www.", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building", "snapshot"=>0),
-					array("pc"=>"", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card", "snapshot"=>0),
-					array("pc"=>"", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop", "snapshot"=>0),					
-					array("pc"=>"", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android", "snapshot"=>0),
-					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple", "snapshot"=>0),
-					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile", "snapshot"=>0),
-					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child", "snapshot"=>0),
-					array("pc"=>"www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0),					
+					array("pc"=>"www.", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0, "notify"=>0),
+					array("pc"=>"", "url" => 'm3.i3teamworks.com', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
 				);
 				
 $array_snapshots = array();
@@ -241,7 +245,7 @@ $array_snapshots = array();
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
 					//$x = check_status($v['url']);
-					$x = check_status_with_heroku($v['pc'],$v['url']);
+					$x = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					$check_snapshot = $v['snapshot'];
 				?>
 				<div class="rad-info-box rad-txt-secondary" style="<?php echo $x; ?>">

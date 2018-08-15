@@ -32,6 +32,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     $data = curl_exec($ch);	
 	$data = json_decode($data, true);	
 	$httpcode = $data['http_code'];
+	echo $httpcode;
+	die;
 	$httpmsg = $data['message'];
 	if($httpmsg == "")
 	{

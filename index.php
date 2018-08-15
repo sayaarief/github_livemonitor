@@ -276,7 +276,7 @@ $array_snapshots = array();
 		<?php 
 		}
 	?>
-	<i id="timestamp" style="right: 0;bottom: 0;position: absolute;">		
+	<i id="timestamp" style="right: 0;bottom: 0;position: relative;">		
 	</i>
 </div>
 </main>

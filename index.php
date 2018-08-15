@@ -30,19 +30,13 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data = curl_exec($ch);
-	
 	if (curl_errno($ch))
 	{
 		echo '<pre>'.('Couldn\'t send request: ' . curl_error($ch)).'</pre>';
 	}
-	curl_close($ch);	
-	//$data = json_decode($data, true);		
-	$httpcode = $data['http_code'];	
-	$httpmsg = $data['message'];
-	if($httpmsg == "")
-	{
-		$httpmsg = 'ok';
-	}
+	//$data = json_decode($data, true);
+	$httpcode = $data['http_code'];
+	curl_close($ch);
 	//echo '<pre>'.$httpmsg.'</pre>';    
     if($httpcode>=200 && $httpcode<300)
 	{  

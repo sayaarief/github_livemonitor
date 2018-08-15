@@ -289,7 +289,7 @@ $array_snapshots = array();
 		//var utcDate = dt.toUTCString();
 		
 		var dt = new Date();
-		var utcDate = moment.tz(date, "Asia/Kuala_Lumpur").format('YYYY-MM-DD HH:mm:ss');
+		var utcDate = moment.tz(dt, "Asia/Kuala_Lumpur").format('YYYY-MM-DD HH:mm:ss');
 		
 		document.getElementById('timestamp').innerHTML = "Last checked on "+utcDate;
 		$('.heading').on('click',function()

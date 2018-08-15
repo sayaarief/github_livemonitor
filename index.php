@@ -240,8 +240,8 @@ $array_snapshots = array();
     transform-origin: 0 0;
 }
 </style>
-<main style="padding-left:10px" style="width:100% !important;">
-<div class="row" style="color:black !important;">
+<main style="padding-left:10px">
+<div class="row" style="color:black !important; width:100% !important">
 	<?php 
 		foreach($array_site as $k=> $v)
 		{ ?>			

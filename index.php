@@ -36,8 +36,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 		echo '<pre>'.('Couldn\'t send request: ' . curl_error($ch)).'</pre>';
 	}
 	curl_close($ch);	
-	//$data = json_decode($data, true);	
-	print_r($data);die;
+	//$data = json_decode($data, true);		
 	$httpcode = $data['http_code'];	
 	$httpmsg = $data['message'];
 	if($httpmsg == "")

@@ -276,11 +276,15 @@ $array_snapshots = array();
 		<?php 
 		}
 	?>
+	<i id="timestamp" style="right: 0;bottom: 0;position: absolute;">		
+	</i>
 </div>
 </main>
 <script type="text/javascript">
 	$(document).ready(function()
 	{
+		var timestamp = new Date().getTime();
+		document.getElementById('timestamp').innerHTML = "Last checked on "+timestamp;
 		$('.heading').on('click',function()
 		{
 			var url = 'http://'+$(this).text();			

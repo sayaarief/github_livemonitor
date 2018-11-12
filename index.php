@@ -17,9 +17,9 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$smp_telegram_token = "676415365:AAFZWGH-kaUBpPR9xspIYz8n5MUA5AQ-EYs";
 	$url = "https://api.telegram.org/bot".$smp_telegram_token."/sendMessage";
 	
-	$offline_style = "background-color:#e84118 !important; border-radius:5px";
-	$online_style = "background-color:#4cd137 !important; border-radius:5px";
-	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
+	$offline_style = "border-color:#e84118 !important; border-radius:5px";
+	$online_style = "border-color:#4cd137 !important; border-radius:5px";
+	$exception_style = "border-color:#2980b9 !important; border-radius:5px";
 	
 	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
 	//$heroku_url = "https://livemonitor-api.herokuapp.com/check_url.php?host=".$host;
@@ -195,7 +195,7 @@ $array_site = array(
 					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0, "notify"=>1),					
+					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play", "snapshot"=>0, "notify"=>1),					
 					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"https://", "url" => 'intl.i3teamworks.com/login.php', "title" => 'INTL i3tw', "icon" => "fa fa-universal-access", "snapshot"=>0, "notify"=>1),
@@ -271,7 +271,7 @@ $array_snapshots = array();
 						?>
 						
 					<br clear='all'/><br clear='all'/>
-					<span class="heading" style="font-size:13px !important;"><?php echo $v['url']; ?></span>
+					<span class="heading" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></span>
 					<span class="value"><span><?php echo $v['title']; ?></span></span>					
 				</div>
 			</div>

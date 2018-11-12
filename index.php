@@ -59,7 +59,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			$result = curl_exec($ch);		
+			//$result = curl_exec($ch);		
 			curl_close($ch);
 		}
         //return $offline_style;
@@ -259,7 +259,7 @@ $array_snapshots = array();
 }
 
 @keyframes offline_style { 
-   50% { border-color: white; } 
+   50% { background-color: rgba(209, 29, 35,.6);} 
 }
 div#offline_style_blink { /*or other element you want*/
     animation: offline_style .5s step-end infinite alternate;

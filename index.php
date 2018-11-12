@@ -59,7 +59,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			//$result = curl_exec($ch);		
+			$result = curl_exec($ch);		
 			curl_close($ch);
 		}
         //return $offline_style;
@@ -186,7 +186,7 @@ function check_status($host)
 				); */
 
 $array_site = array(
-					array("pc"=>"http://", "url" => 'm3techxx.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"http://", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-2x", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"http://", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-2x", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"http://", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-2x", "snapshot"=>0, "notify"=>1),

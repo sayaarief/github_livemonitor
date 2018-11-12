@@ -257,6 +257,13 @@ $array_snapshots = array();
 #second {    
     float: left;    
 }
+
+@keyframes offline_style_blink { 
+   50% { border-color: white; } 
+}
+div { /*or other element you want*/
+    animation: offline_style_blink .5s step-end infinite alternate;
+}
 </style>
 <main style="padding-left:10px">
 <div class="row" style="color:white !important; width:100% !important">
@@ -281,15 +288,15 @@ $array_snapshots = array();
 					$check_snapshot = $v['snapshot'];
 				?>
 				<!--<div class="rad-info-box" style="<?php echo $x; ?>">-->
-				<div class="server" <?php if($result==2) {echo "id='offline_div'"; } ?> style="<?php echo $x; ?>">
+				<div class="server" <?php if($result==2) {echo "id='offline_style_blink'"; } ?> style="<?php echo $x; ?>">
 					<div id="first">
 						<i class="<?php echo $v['icon']; ?>"></i>
 					</div>
 					<div style="float:left">
 					<?php if($result == 1) { ?>
-						<span class="heading" style="font-size:10px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
+						<span class="heading" style="font-size:12px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
 					<?php } else { ?>
-						<span class="heading" style="font-size:10px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>
+						<span class="heading" style="font-size:12px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>
 					<?php } ?>
 					<br clear='all'/>
 					<a href="<?php echo $v['pc']."".$v['url']; ?>" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></a>

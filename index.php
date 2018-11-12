@@ -258,15 +258,15 @@ $array_snapshots = array();
     float: left;    
 }
 
-@keyframes offline_style_blink { 
+@keyframes offline_style { 
    50% { border-color: white; } 
 }
-#offline_style_blink { /*or other element you want*/
-    animation: offline_style_blink .5s step-end infinite alternate;
-	-webkit-animation: offline_style_blink .5s step-end infinite alternate;
-    -moz-animation:    offline_style_blink .5s step-end infinite alternate;
-    -o-animation:      offline_style_blink .5s step-end infinite alternate;
-    -ms-transition:    offline_style_blink .5s step-end infinite alternate;    
+div#offline_style_blink { /*or other element you want*/
+    animation: offline_style .5s step-end infinite alternate;
+	-webkit-animation: offline_style .5s step-end infinite alternate;
+    -moz-animation:    offline_style .5s step-end infinite alternate;
+    -o-animation:      offline_style .5s step-end infinite alternate;
+    -ms-transition:    offline_style .5s step-end infinite alternate;    
 }
 </style>
 <main style="padding-left:10px">
@@ -292,7 +292,7 @@ $array_snapshots = array();
 					$check_snapshot = $v['snapshot'];
 				?>
 				<!--<div class="rad-info-box" style="<?php echo $x; ?>">-->
-				<div class="server" <?php if($result==2) {echo "id='offline_style_blink'"; } ?> style="<?php echo $x; ?>">
+				<div class="server" <?php if($result!=1) {echo "id='offline_style_blink'"; } ?> style="<?php echo $x; ?>">
 					<div id="first">
 						<i class="<?php echo $v['icon']; ?>"></i>
 					</div>

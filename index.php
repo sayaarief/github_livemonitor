@@ -186,13 +186,13 @@ function check_status($host)
 				); */
 
 $array_site = array(
-					array("pc"=>"www.", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple fa-2x", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-2x", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-2x", "snapshot"=>0, "notify"=>1),					
 					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
 					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),

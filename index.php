@@ -263,9 +263,9 @@ $array_snapshots = array();
 }
 div#offline_style_blink { /*or other element you want*/
     animation: offline_style .5s step-end infinite alternate;
-	-webkit-animation: offline_style 5s infinite; /* Safari 4+ */
-	-moz-animation:    offline_style 5s infinite; /* Fx 5+ */
-	-o-animation:      offline_style 5s infinite; /* Opera 12+ */
+	-webkit-animation: offline_style .5s step-end infinite alternate; /* Safari 4+ */
+	-moz-animation:    offline_style .5s step-end infinite alternate; /* Fx 5+ */
+	-o-animation:      offline_style .5s step-end infinite alternate; /* Opera 12+ */
 	
 }
 </style>

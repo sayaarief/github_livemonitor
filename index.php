@@ -261,7 +261,7 @@ $array_snapshots = array();
 @keyframes offline_style_blink { 
    50% { border-color: white; } 
 }
-div #offline_style_blink { /*or other element you want*/
+#offline_style_blink { /*or other element you want*/
     animation: offline_style_blink .5s step-end infinite alternate;
 	-webkit-animation: offline_style_blink .5s step-end infinite alternate;
     -moz-animation:    offline_style_blink .5s step-end infinite alternate;

@@ -271,7 +271,7 @@ $array_snapshots = array();
 						?>
 						
 					<br clear='all'/><br clear='all'/>
-					<span class="heading" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></span>
+					<span class="heading" style="font-size:10px !important;"><?php echo $v['pc']."".$v['url']; ?></span>
 					<span class="value"><span><?php echo $v['title']; ?></span></span>					
 				</div>
 			</div>

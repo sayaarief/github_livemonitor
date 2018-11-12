@@ -242,7 +242,7 @@ $array_snapshots = array();
 }
 
 .server {
-    padding: 7px;       
+    padding: 7px 5px;       
     border: 1px solid rgba(255, 255, 255, .1);
     border-radius: 5px;
 	float:left;
@@ -276,7 +276,7 @@ $array_snapshots = array();
 					
 					<i style="float:left" class="<?php echo $v['icon']; ?>"></i>
 					<div style="float:right">
-					<?php if($x == 1) { ?>
+					<?php if($result == 1) { ?>
 						<span class="heading" style="font-size:10px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
 					<?php } else { ?>
 						<span class="heading" style="font-size:10px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>

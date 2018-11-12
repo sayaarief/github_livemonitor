@@ -287,7 +287,7 @@ $array_snapshots = array();
 					<span class="value" style="font-size:15px !important;"><span><?php echo $v['title']; ?></span></span>
 					</div>
 				</div>
-				<br clear='all'/><br clear='all'/><br clear='all'/>
+				<br clear='all'/><br clear='all'/>
 			</div>
 		<?php 
 		}

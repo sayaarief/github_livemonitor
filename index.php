@@ -15,11 +15,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	//$chat_id = "676415365";
 	$chat_id = "449412519";
 	$smp_telegram_token = "676415365:AAFZWGH-kaUBpPR9xspIYz8n5MUA5AQ-EYs";
-	$url = "https://api.telegram.org/bot".$smp_telegram_token."/sendMessage";
-	
-	$offline_style = "border-color:#e84118 !important; border-radius:5px";
-	$online_style = "border-color:#4cd137 !important; border-radius:5px";
-	$exception_style = "border-color:#2980b9 !important; border-radius:5px";
+	$url = "https://api.telegram.org/bot".$smp_telegram_token."/sendMessage";	
 	
 	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
 	//$heroku_url = "https://livemonitor-api.herokuapp.com/check_url.php?host=".$host;
@@ -40,7 +36,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	//echo '<pre>'.$httpmsg.'</pre>';	
     if($httpcode>=200 && $httpcode<300)
 	{  
-        return $online_style;
+        //return $online_style;
+		return 1;
     }
 	else
 	{
@@ -62,10 +59,11 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			$result = curl_exec($ch);		
+			//$result = curl_exec($ch);		
 			curl_close($ch);
 		}
-        return $offline_style;
+        //return $offline_style;
+		return -99;
     }
 }
 
@@ -113,7 +111,7 @@ function check_status($host)
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		$result = curl_exec($ch);		
+		//$result = curl_exec($ch);		
 		curl_close($ch);
         return $offline_style;
     }
@@ -188,18 +186,18 @@ function check_status($host)
 				); */
 
 $array_site = array(
-					array("pc"=>"www.", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-lg", "snapshot"=>0, "notify"=>1),					
-					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'intl.i3teamworks.com/login.php', "title" => 'INTL i3tw', "icon" => "fa fa-universal-access fa-lg", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/login.php', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-lg", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"www.", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-2x", "snapshot"=>0, "notify"=>1),					
+					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'intl.i3teamworks.com/login.php', "title" => 'INTL i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/login.php', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
 				);
 				
 $array_snapshots = array();
@@ -224,6 +222,7 @@ $array_snapshots = array();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <meta http-equiv="refresh" content="1800;url=index.php">
 <header class="rad-page-title"></header>
+<body style="background-color: #15202c;">
 <style type='text/css'>
 	.frame {
     width: 100%;    
@@ -241,38 +240,52 @@ $array_snapshots = array();
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
+
+.server {
+    padding: 7px;       
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 5px;
+	float:left;
+	width:100%;
+}
 </style>
 <main style="padding-left:10px">
-<div class="row" style="color:black !important; width:100% !important">
+<div class="row" style="color:white !important; width:100% !important">
 	<?php 
+		$offline_style = "border-color:#e84118 !important;";
+		$online_style = "border-color:#4cd137 !important;";
+		$exception_style = "border-color:#2980b9 !important;";
 		foreach($array_site as $k=> $v)
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
 					//$x = check_status($v['url']);
-					$x = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
+					$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
+					if($result == 1)
+					{
+						$x = $online_style;
+					}
+					else
+					{
+						$x = $offline_style;
+					}
 					$check_snapshot = $v['snapshot'];
 				?>
-				<div class="rad-info-box rad-txt-secondary" style="<?php echo $x; ?>">
-					<?php 
-						if($check_snapshot)
-						{
-							//$web_snapshot = get_snapshot($v['url']);
-							//$web_snapshot = $array_snapshots[$v['url']];
-							?>
-							<!--<img style="width:100%;border-radius:5px" src="data:image/jpeg;base64,<?php echo $web_snapshot; ?>"></img>-->
-						<?php
-						}
-						else
-						{?>
-							<i class="<?php echo $v['icon']; ?>"></i>
-						<?php
-						}
-						?>
-						
-					<br clear='all'/><br clear='all'/>
-					<span class="heading" style="font-size:10px !important;"><?php echo $v['pc']."".$v['url']; ?></span>
-					<span class="value" style="font-size:13px !important;"><span><?php echo $v['title']; ?></span></span>					
+				<!--<div class="rad-info-box" style="<?php echo $x; ?>">-->
+				<div class="server" style="<?php echo $x; ?>">
+					
+					<i style="float:left" class="<?php echo $v['icon']; ?>"></i>
+					<div style="float:right">
+					<?php if($x == 1) { ?>
+						<span class="heading" style="font-size:10px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
+					<?php } else { ?>
+						<span class="heading" style="font-size:10px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>
+					<?php } ?>
+					<br clear='all'/>
+					<span class="heading" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></span>
+					<br clear='all'/>
+					<span class="value" style="font-size:15px !important;"><span><?php echo $v['title']; ?></span></span>
+					</div>
 				</div>
 			</div>
 		<?php 
@@ -299,3 +312,4 @@ $array_snapshots = array();
 		});
 	});
 </script>
+</body>

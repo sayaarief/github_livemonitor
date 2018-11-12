@@ -59,7 +59,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			//$result = curl_exec($ch);		
+			$result = curl_exec($ch);		
 			curl_close($ch);
 		}
         //return $offline_style;
@@ -298,9 +298,9 @@ div#offline_style_blink { /*or other element you want*/
 					</div>
 					<div style="float:left">
 					<?php if($result == 1) { ?>
-						<span class="offline_style_blink" style="font-size:12px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
+						<div id="heading" style="font-size:12px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></div>
 					<?php } else { ?>
-						<span class="heading" style="font-size:12px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>
+						<div id="heading" style="font-size:12px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></div>
 					<?php } ?>
 					<br clear='all'/>
 					<a href="<?php echo $v['pc']."".$v['url']; ?>" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></a>

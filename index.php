@@ -248,6 +248,15 @@ $array_snapshots = array();
 	float:left;
 	width:100%;
 }
+
+#first {
+    width: 50px;
+    float: left;
+}
+
+#second {    
+    float: left;    
+}
 </style>
 <main style="padding-left:10px">
 <div class="row" style="color:white !important; width:100% !important">
@@ -273,9 +282,10 @@ $array_snapshots = array();
 				?>
 				<!--<div class="rad-info-box" style="<?php echo $x; ?>">-->
 				<div class="server" style="<?php echo $x; ?>">
-					
-					<i style="float:left" class="<?php echo $v['icon']; ?>"></i>
-					<div style="float:right">
+					<div id="first">
+						<i class="<?php echo $v['icon']; ?>"></i>
+					</div>
+					<div style="float:left">
 					<?php if($result == 1) { ?>
 						<span class="heading" style="font-size:10px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
 					<?php } else { ?>

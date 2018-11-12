@@ -292,7 +292,7 @@ $array_snapshots = array();
 						<span class="heading" style="font-size:10px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>
 					<?php } ?>
 					<br clear='all'/>
-					<span class="heading" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></span>
+					<a href="<?php echo $v['pc']."".$v['url']; ?>" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></a>
 					<br clear='all'/>
 					<span class="value" style="font-size:15px !important;"><span><?php echo $v['title']; ?></span></span>
 					</div>

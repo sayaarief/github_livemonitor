@@ -262,10 +262,10 @@ $array_snapshots = array();
    50% { background-color: rgba(209, 29, 35,.6);} 
 }
 div#offline_style_blink { /*or other element you want*/
-    animation: offline_style .5s step-end infinite alternate;
-	-webkit-animation: offline_style .5s step-end infinite alternate; /* Safari 4+ */
-	-moz-animation:    offline_style .5s step-end infinite alternate; /* Fx 5+ */
-	-o-animation:      offline_style .5s step-end infinite alternate; /* Opera 12+ */
+    animation: offline_style 2s step-end infinite alternate;
+	-webkit-animation: offline_style 2s step-end infinite alternate; /* Safari 4+ */
+	-moz-animation:    offline_style 2s step-end infinite alternate; /* Fx 5+ */
+	-o-animation:      offline_style 2s step-end infinite alternate; /* Opera 12+ */
 	
 }
 </style>

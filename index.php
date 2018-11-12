@@ -263,6 +263,10 @@ $array_snapshots = array();
 }
 div { /*or other element you want*/
     animation: offline_style_blink .5s step-end infinite alternate;
+	-webkit-animation: offline_style_blink .5s step-end infinite alternate;
+    -moz-animation:    offline_style_blink .5s step-end infinite alternate;
+    -o-animation:      offline_style_blink .5s step-end infinite alternate;
+    -ms-transition:    offline_style_blink .5s step-end infinite alternate;    
 }
 </style>
 <main style="padding-left:10px">

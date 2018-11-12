@@ -242,7 +242,7 @@ $array_snapshots = array();
 }
 
 .server {
-    padding: 7px 5px;       
+    padding: 5px 7px 5px 5px;       
     border: 1px solid rgba(255, 255, 255, .1);
     border-radius: 5px;
 	float:left;

@@ -298,9 +298,9 @@ div#offline_style_blink { /*or other element you want*/
 					</div>
 					<div style="float:left">
 					<?php if($result == 1) { ?>
-						<div id="heading" style="font-size:12px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></div>
+						<span id="heading" style="font-size:12px !important; color:#4cd137"><b style="font-size:15px !important">&#8226;</b> <b>ONLINE</b></span>
 					<?php } else { ?>
-						<div id="heading" style="font-size:12px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></div>
+						<span id="heading" style="font-size:12px !important; color:#e84118"><b style="font-size:15px !important">&#8226;</b> <b>OFFLINE</b></span>
 					<?php } ?>
 					<br clear='all'/>
 					<a href="<?php echo $v['pc']."".$v['url']; ?>" style="font-size:13px !important;"><?php echo $v['pc']."".$v['url']; ?></a>

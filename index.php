@@ -282,7 +282,7 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					$x = check_status($v['pc'],$v['url']);
+					$result = check_status($v['pc'],$v['url']);
 					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{

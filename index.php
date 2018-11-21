@@ -90,8 +90,7 @@ function check_status($http_code,$host)
     $httpcode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);	
     curl_close($ch);  
     if($httpcode>=200 && $httpcode<300)
-	{  
-		echo '<pre>';print_r($httpcode);echo '</pre>';
+	{  		
         //return $online_style;
 		return 1;
     }

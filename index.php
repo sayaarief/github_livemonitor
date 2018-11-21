@@ -86,7 +86,8 @@ function check_status($host)
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    $data = curl_exec($ch);  
+    $data = curl_exec($ch);
+	echo "<pre>";print_r($data);echo "</pre>";
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);	
     curl_close($ch);  
     if($httpcode>=200 && $httpcode<300)

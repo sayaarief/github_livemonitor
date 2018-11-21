@@ -67,7 +67,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     }
 }
 
-function check_status($host)
+function check_status($http_code,$host)
 {		
 	$disable_web_page_preview = null;
 	$reply_to_message_id = null;
@@ -81,7 +81,7 @@ function check_status($host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	    
-    $ch = curl_init($host);  
+    $ch = curl_init($http_code.$host);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);  
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
@@ -281,7 +281,7 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					$x = check_status($v['url']);
+					$x = check_status($v['pc'],$v['url']);
 					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{

@@ -91,7 +91,8 @@ function check_status($host)
     curl_close($ch);  
     if($httpcode>=200 && $httpcode<300)
 	{  
-        return $online_style;
+        //return $online_style;
+		return 1;
     }
 	else
 	{
@@ -113,7 +114,8 @@ function check_status($host)
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		//$result = curl_exec($ch);		
 		curl_close($ch);
-        return $offline_style;
+        //return $offline_style;
+		return -99;
     }
 }
 
@@ -279,8 +281,8 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					//$x = check_status($v['url']);
-					$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
+					$x = check_status($v['url']);
+					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{
 						$x = $online_style;

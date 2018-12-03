@@ -81,9 +81,9 @@ function check_status($http_code,$host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	
-    $ch = curl_init($host);  
-    curl_setopt($ch, CURLOPT_TIMEOUT, 30); 
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+    $ch = curl_init($http_code.$host);  
+    curl_setopt($ch, CURLOPT_TIMEOUT, 300); 
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);

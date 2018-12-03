@@ -80,8 +80,8 @@ function check_status($http_code,$host)
 	$offline_style = "background-color:#e84118 !important; border-radius:5px";
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
-	return 1;
-    $ch = curl_init($http_code.$host);  
+	
+    $ch = curl_init($host);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 30); 
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body

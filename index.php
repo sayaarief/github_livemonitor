@@ -59,7 +59,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-			$result = curl_exec($ch);		
+			$result = curl_exec($ch);			
 			curl_close($ch);
 		}
         //return $offline_style;
@@ -84,12 +84,13 @@ function check_status($http_code,$host)
     $ch = curl_init($http_code.$host);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 30); 
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-	curl_setopt($ch, CURLOPT_NOBODY  , true);  // we don't need body
+	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data = curl_exec($ch);	
     $httpcode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);	
-    curl_close($ch);  
+    curl_close($ch);
+	return 1;
     if($httpcode>=200 && $httpcode<300)
 	{  		
         //return $online_style;
@@ -112,8 +113,11 @@ function check_status($http_code,$host)
 		curl_setopt($ch, CURLOPT_POST, count($fields));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		//$result = curl_exec($ch);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);		
+		/* $result = curl_exec($ch);				
+		$result = json_decode($result, true);
+		print_r($result['result']);
+		die; */
 		curl_close($ch);
         //return $offline_style;
 		return -99;

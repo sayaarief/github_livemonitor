@@ -80,7 +80,7 @@ function check_status($http_code,$host)
 	$offline_style = "background-color:#e84118 !important; border-radius:5px";
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
-	    
+	return 1;
     $ch = curl_init($http_code.$host);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 30); 
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
@@ -89,8 +89,7 @@ function check_status($http_code,$host)
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $data = curl_exec($ch);	
     $httpcode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);	
-    curl_close($ch);
-	return 1;
+    curl_close($ch);	
     if($httpcode>=200 && $httpcode<300)
 	{  		
         //return $online_style;

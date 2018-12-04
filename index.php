@@ -67,7 +67,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     }
 }
 
-function check_status($pc,$host,$pc_f)
+function check_status($pc,$host)
 {		
 	$disable_web_page_preview = null;
 	$reply_to_message_id = null;
@@ -285,8 +285,8 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					$result = check_status($v['pc'],$v['url'], $v['s']);
-					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
+					//$result = check_status($v['pc'],$v['url'], $v['s']);
+					$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{
 						$x = $online_style;

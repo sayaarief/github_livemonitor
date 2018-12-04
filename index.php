@@ -67,7 +67,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     }
 }
 
-function check_status($http_code,$host)
+function check_status($pc,$host, $pc_f)
 {		
 	$disable_web_page_preview = null;
 	$reply_to_message_id = null;
@@ -81,9 +81,16 @@ function check_status($http_code,$host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 	
-    $ch = curl_init($http_code.$host);  
-    curl_setopt($ch, CURLOPT_TIMEOUT, 300); 
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 300);
+	if($pc_f)
+	{
+		$ch = curl_init($pc.$host);
+	}
+	else
+	{
+		$ch = curl_init($host);
+	}
+    curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -192,18 +199,18 @@ function check_status($http_code,$host)
 				); */
 
 $array_site = array(
-					array("pc"=>"http://", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-2x", "snapshot"=>0, "notify"=>1),					
-					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'intl.i3teamworks.com/login.php', "title" => 'INTL i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/login.php', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "snapshot"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3tech.com.my', "title" => 'M3 Tech', "icon" => "fa fa-building fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3asia.com', "title" => 'M3 Asia', "icon" => "fa fa-credit-card fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'm3online.com', "title" => 'M3 Online', "icon" => "fa fa-desktop fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'getsnapps.com', "title" => 'GetSnapps', "icon" => "fa fa-android fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'apps.m3tech.asia', "title" => 'Apps M3 Tech', "icon" => "fa fa-apple fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-2x", "s"=>1, "notify"=>1),					
+					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'intl.i3teamworks.com/login.php', "title" => 'INTL i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/login.php', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
 				);
 				
 $array_snapshots = array();
@@ -285,7 +292,7 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					$result = check_status($v['pc'],$v['url']);
+					$result = check_status($v['pc'],$v['url'], $v['s']);
 					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{

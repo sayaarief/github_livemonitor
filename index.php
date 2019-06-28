@@ -81,7 +81,7 @@ function check_status($pc,$host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 		
-	$ch = curl_init($pc.$host);	
+	$ch = curl_init($host);	
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body

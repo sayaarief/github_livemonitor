@@ -33,7 +33,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$data = json_decode($data, true);
 	$httpcode = $data['status'];
 	curl_close($ch);
-	//echo '<pre>'.$httpmsg.'</pre>';	
+	echo '<pre>'.$httpcode.'</pre>';	
     if($httpcode>=200 && $httpcode<300)
 	{  
         //return $online_style;
@@ -81,9 +81,9 @@ function check_status($pc,$host)
 	$online_style = "background-color:#4cd137 !important; border-radius:5px";
 	$exception_style = "background-color:#2980b9 !important; border-radius:5px";
 		
-	$ch = curl_init($host);	
+	$ch = curl_init($pc.$host);	
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+    //curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -285,8 +285,8 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					$result = check_status($v['pc'],$v['url'], $v['s']);
-					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
+					//$result = check_status($v['pc'],$v['url'], $v['s']);
+					$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{
 						$x = $online_style;

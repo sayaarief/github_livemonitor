@@ -295,7 +295,7 @@ div#offline_style_blink { /*or other element you want*/
 					{
 						$x = $offline_style;
 					}
-					$check_snapshot = $v['snapshot'];
+					//$check_snapshot = $v['snapshot'];
 				?>
 				<!--<div class="rad-info-box" style="<?php echo $x; ?>">-->
 				<div class="server" <?php if($result!=1) {echo "id='offline_style_blink'"; } ?> style="<?php echo $x; ?>">

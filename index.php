@@ -204,7 +204,7 @@ $array_site = array(
 					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-2x", "s"=>1, "notify"=>1),					
 					array("pc"=>"https://", "url" => 'm3.i3teamworks.com', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
 					array("pc"=>"https://", "url" => 'oa.i3teamworks.com', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),					
-					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
 				);
 				
 $array_snapshots = array();

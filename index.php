@@ -202,9 +202,9 @@ $array_site = array(
 					array("pc"=>"", "url" => 'i3apps.com.my', "title" => 'i3 Apps', "icon" => "fa fa-mobile fa-2x", "s"=>0, "notify"=>1),
 					array("pc"=>"http://", "url" => 'support.m3asia.com', "title" => 'Support M3 Asia', "icon" => "fa fa-child fa-2x", "s"=>0, "notify"=>1),
 					array("pc"=>"http://www.", "url" => 'i3display.com', "title" => 'i3 Display', "icon" => "fa fa-play fa-2x", "s"=>1, "notify"=>1),					
-					array("pc"=>"https://", "url" => 'm3.i3teamworks.com/login.php', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
-					array("pc"=>"https://", "url" => 'oa.i3teamworks.com/login.php', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),					
-					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn/login.php', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'm3.i3teamworks.com', "title" => 'M3 i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
+					array("pc"=>"https://", "url" => 'oa.i3teamworks.com', "title" => 'OA i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),					
+					array("pc"=>"https://", "url" => 'cn.i3teamworks.cn', "title" => 'CN i3tw', "icon" => "fa fa-universal-access fa-2x", "s"=>0, "notify"=>1),
 				);
 				
 $array_snapshots = array();

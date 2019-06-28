@@ -17,7 +17,7 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$smp_telegram_token = "676415365:AAFZWGH-kaUBpPR9xspIYz8n5MUA5AQ-EYs";
 	$url = "https://api.telegram.org/bot".$smp_telegram_token."/sendMessage";	
 	
-	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$http_code.$host;
+	$heroku_url = "https://pw-url-checker.herokuapp.com/check?url=".$host;
 	//$heroku_url = "https://livemonitor-api.herokuapp.com/check_url.php?host=".$host;
 	
 	$ch = curl_init($heroku_url);  

@@ -107,17 +107,17 @@ function check_status($pc,$host)
 						'reply_markup' => urlencode($reply_markup)
 					);
 		//$url = "https://api.telegram.org/bot676415365:AAFZWGH-kaUBpPR9xspIYz8n5MUA5AQ-EYs/sendMessage?chat_id=449412519&text=test123456";
-		$ch = curl_init($url);
+		/* $ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_POST, count($fields));
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);	
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);		
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); */		
 		/* $result = curl_exec($ch);				
 		$result = json_decode($result, true);
 		print_r($result['result']);
 		die; */
-		curl_close($ch);
+		//curl_close($ch);
         //return $offline_style;
 		return -99;
     }

@@ -23,8 +23,10 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
 	$ch = curl_init($heroku_url);  
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);  
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch,  CURLOPT_USERAGENT,"page-check/1.0");
     $data = curl_exec($ch);
 	if (curl_errno($ch))
 	{

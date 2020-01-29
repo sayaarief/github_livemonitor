@@ -25,7 +25,8 @@ function check_status_with_heroku($http_code,$host, $notify_flag)
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);	
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch,  CURLOPT_USERAGENT,"page-check/1.0");
     $data = curl_exec($ch);
 	if (curl_errno($ch))
 	{
@@ -90,6 +91,7 @@ function check_status($pc,$host)
 	curl_setopt($ch, CURLOPT_NOBODY  ,true);  // we don't need body
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch,  CURLOPT_USERAGENT,"page-check/1.0");
     $data = curl_exec($ch);	
     $httpcode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);	
     curl_close($ch);	
@@ -286,8 +288,8 @@ div#offline_style_blink { /*or other element you want*/
 		{ ?>			
 			<div class="col-lg-3 col-sm-6 col-xs-12">
 				<?php
-					//$result = check_status($v['pc'],$v['url'], $v['s']);
-					$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
+					$result = check_status($v['pc'],$v['url'], $v['s']);
+					//$result = check_status_with_heroku($v['pc'],$v['url'], $v['notify']);
 					if($result == 1)
 					{
 						$x = $online_style;
